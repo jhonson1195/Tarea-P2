@@ -16,8 +16,8 @@ public class EnviarCorreo {
     final String puertoEnvio; 
     
     public EnviarCorreo(){
-        this.Cuenta = "estructurasdatosjje@gmail.com"; 
-        this.Contraseña = "datosjje"; 
+        this.Cuenta = "pruebaprogramacion0405@gmail.com"; 
+        this.Contraseña = "tallertec"; 
         this.servidorSMTP = "smtp.gmail.com"; 
         this.puertoEnvio = "465";
     }
@@ -59,6 +59,18 @@ public class EnviarCorreo {
         public PasswordAuthentication getPasswordAuthentication() { 
             return new PasswordAuthentication(Cuenta, Contraseña); 
         } 
-    } 
+    }
+    
+    public static void main(String[] args) throws MessagingException {
+        
+        
+        EnviarCorreo Envia = new EnviarCorreo();
+        //
+        Envia.Enviador("50687113820@email.smsglobal.com", "Asunto: hola", "Texto: Soy Esteban");
+        
+
+
+        System.out.println("Mensaje Enviado"); 
+    }
 }
 
