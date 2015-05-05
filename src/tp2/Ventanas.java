@@ -44,16 +44,16 @@ public class Ventanas {
         return codigo;
     }
     
-    public int PasarClienteVentanilla(){
-        if(almacenamiento.Atender()==null){
-            return -1;
+    public boolean PasarClienteVentanilla(){
+        boolean bandera=false;
+        for(int i=0; i<Lista.size();i++){
+            if(!Lista.get(i).getEstado()){
+                Lista.get(i).setCliente(almacenamiento.Atender());
+                bandera=true;
+                break;
+            }
         }
-        Lista.goToStart();
-        while(Lista.getElement().getEstado()){
-            Lista.next();  
-        }
-        Lista.getElement().setCliente(almacenamiento.Atender());
-        
-        return 1;   
-    }  
+        return bandera;
+    }
+    
 }

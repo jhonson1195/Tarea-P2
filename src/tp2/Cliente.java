@@ -14,7 +14,6 @@ public class Cliente {
     private int prioridad;
     private  String Nombre, Correo, tipo, ventanilla, tiquete;
     
-    public Cliente(){}
     public Cliente(String  Nombre, String Correo, String tipo, String ventanilla, String tiquete, int prioridad){
         this.Nombre=Nombre;
         this.Correo=Correo;

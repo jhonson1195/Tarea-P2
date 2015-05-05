@@ -40,15 +40,12 @@ public class MinHeap {
            
      public Cliente Eliminar(){
          if(lista.isEmpty()){return null;}
+         Cliente eliminado=lista.get(0);
          if(lista.size()==1){
-             
-             Cliente cli=lista.get(0);
-             System.out.println(cli.getTiquete());
              lista.clear();
              contador--;
-             return cli;
+             return eliminado;
          }
-         Cliente eliminado=lista.get(0);
          lista.setElement(0, lista.get(lista.size()-1));
          lista.remove(lista.size()-1);
          int padre=0;
@@ -72,7 +69,6 @@ public class MinHeap {
             
         }
         contador--;
-        System.out.println(eliminado.getTiquete());
         return eliminado;
          
      }   

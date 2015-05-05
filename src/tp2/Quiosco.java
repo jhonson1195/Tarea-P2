@@ -5,7 +5,9 @@
  */
 package tp2;
 
+import java.awt.Component;
 import java.util.Map;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -159,6 +161,10 @@ public class Quiosco extends javax.swing.JFrame {
         Cliente cliente = new Cliente(jTextField1.getText(),jTextField3.getText(),(String)seleccion2[0], (String)seleccion[0], tiquete ,ContadorClientes);
         tipoventana.appendCliente(cliente);
         ContadorClientes++;
+        jTextField1.setText(null);
+        jTextField3.setText(null);
+        Component frame = null;
+        JOptionPane.showMessageDialog(frame,"Su tiquete es: "+tiquete);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

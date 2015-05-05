@@ -30,10 +30,9 @@ public class HeapTipos implements Estructura{
     
     @Override
     public void Agregar(Cliente info){
-        
+        contador++;
         if(null != info.getTipo())switch (info.getTipo()) {
             case "Persona con discapacidad":
-                System.out.println("agrego");
                 Discacidad.insert(info);
                 break;
             case "Adulto mayor":
@@ -50,7 +49,7 @@ public class HeapTipos implements Estructura{
                 break;
         }
         
-        contador++;
+        
     }
     
     @Override
@@ -59,10 +58,8 @@ public class HeapTipos implements Estructura{
         if(contador==0){
             return null;
         }
-        
         contador--;
         if(Discacidad.getContador()!=0){
-            System.out.println("elimino");
             return Discacidad.Eliminar();
         }
         if(AdultoMayor.getContador()!=0){

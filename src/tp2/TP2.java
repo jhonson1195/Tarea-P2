@@ -17,7 +17,9 @@ public class TP2 {
     public static void main(String[] args) {
         
         Configuracion confi = new Configuracion();
-        confi.setVisible(true);  
+        confi.setVisible(true);
+     
+        
     }
     
 }
