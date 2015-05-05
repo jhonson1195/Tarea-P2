@@ -44,16 +44,18 @@ public class Ventanas {
         return codigo;
     }
     
-    public boolean PasarClienteVentanilla(){
-        boolean bandera=false;
+    public String PasarClienteVentanilla(){
+        String mensaje=null;
         for(int i=0; i<Lista.size();i++){
             if(!Lista.get(i).getEstado()){
-                Lista.get(i).setCliente(almacenamiento.Atender());
-                bandera=true;
+                Cliente cliente=almacenamiento.Atender();
+                
+                Lista.get(i).setCliente(cliente);
+                mensaje="Atendiendo cliente "+cliente.getTiquete()+" en "+ Lista.get(i).getNombre();
                 break;
             }
         }
-        return bandera;
+        return mensaje;
     }
     
 }
