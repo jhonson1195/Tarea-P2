@@ -9,15 +9,16 @@ package tp2;
  *
  * @author jhonson
  */
-public class TP2 {
+public class ColaTipos implements Estructura{
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    @Override
+    public void Agregar(Cliente info) {
         
-        Configuracion confi = new Configuracion();
-        confi.setVisible(true);  
+    }
+
+    @Override
+    public Cliente Atender() {
+        return null;
     }
     
 }

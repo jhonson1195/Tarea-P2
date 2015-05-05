@@ -9,15 +9,9 @@ package tp2;
  *
  * @author jhonson
  */
-public class TP2 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
-        Configuracion confi = new Configuracion();
-        confi.setVisible(true);  
-    }
+public interface Estructura {
+    
+    public void Agregar(Cliente info);
+    public Cliente Atender();
     
 }
