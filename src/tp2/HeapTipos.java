@@ -78,5 +78,60 @@ public class HeapTipos implements Estructura{
         return null;
         
     }
+
+    @Override
+    public Cliente SiguienteClienteaTeneder() {
+        
+        if(contador==0){
+            return null;
+        }
+        contador--;
+        if(Discacidad.getContador()!=0){
+            return Discacidad.getPrimero();
+        }
+        if(AdultoMayor.getContador()!=0){
+            return AdultoMayor.getPrimero(); 
+        }
+        if(MujerEmbarazada.getContador()!=0){
+            return MujerEmbarazada.getPrimero(); 
+        }
+        if(Corporativo.getContador()!=0){
+            return Corporativo.getPrimero(); 
+        }
+        if(Regular.getContador()!=0){
+            return Regular.getPrimero(); 
+        }
+        
+        return null;
+        
+    }
+
+    @Override
+    public String getTiquetes() {
+        if(contador==0){
+            return "";
+        }
+        contador--;
+        if(Discacidad.getContador()!=0){
+            return Discacidad.imp();
+        }
+        if(AdultoMayor.getContador()!=0){
+            return AdultoMayor.imp(); 
+        }
+        if(MujerEmbarazada.getContador()!=0){
+            return MujerEmbarazada.imp(); 
+        }
+        if(Corporativo.getContador()!=0){
+            return Corporativo.imp(); 
+        }
+        if(Regular.getContador()!=0){
+            return Regular.imp(); 
+        }
+        
+        return "";
+        
+        
+    }
+    
     
 }

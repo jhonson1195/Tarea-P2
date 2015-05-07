@@ -239,6 +239,7 @@ public class Configuracion extends javax.swing.JFrame {
         Venta.setMap(TipoVentanas);
         Venta.setVisible(true);
         Administracion Adm = new Administracion();
+        Adm.setAlmacenamiento(TipoVentanas);
         Adm.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 

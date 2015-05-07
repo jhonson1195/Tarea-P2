@@ -76,15 +76,24 @@ public class MinHeap {
      public int getContador(){
          return contador;
      }
+     
+    public Cliente getPrimero(){
+        return lista.get(0);
+        
+    }
     
-    public void imp(){
+    public String imp(){
+        if(lista.size()==0){
+            return "";
+        }
         String resultado;
         lista.goToStart();
-        resultado=lista.getElement().getNombre()+", ";
+        resultado=lista.getElement().getTiquete()+", ";
         while(lista.next()){
-            resultado+=lista.getElement().getNombre()+", ";
+            resultado+=lista.getElement().getTiquete()+", ";
         }
-        System.out.println(resultado);
+        
+        return resultado;
     }
 }
     
