@@ -9,7 +9,7 @@ package tp2;
  *
  * @author jhonson
  */
-public class HeapTipos {
+public class HeapTipos implements Estructura{
     
     MinHeap Discacidad;
     MinHeap AdultoMayor;
@@ -25,53 +25,58 @@ public class HeapTipos {
         Corporativo = new MinHeap();
         Regular = new MinHeap();
         contador=0;
+        
     }
     
+    @Override
     public void Agregar(Cliente info){
-        
-        if("Persona con discapacidad".equals(info.getTipo())){
-            Discacidad.insert(info); 
-        }
-        else if("Adulto mayor".equals(info.getTipo())){
-            AdultoMayor.insert(info); 
-        }
-        else if("Mujer embarazada".equals(info.getTipo())){
-            MujerEmbarazada.insert(info); 
-        }
-        else if("Cliente corporativo".equals(info.getTipo())){
-            Corporativo.insert(info); 
-        }
-        else if ("Cliente regular".equals(info.getTipo())){
-            Regular.insert(info); 
-        }
-        
         contador++;
+        if(null != info.getTipo())switch (info.getTipo()) {
+            case "Persona con discapacidad":
+                Discacidad.insert(info);
+                break;
+            case "Adulto mayor":
+                AdultoMayor.insert(info);
+                break;
+            case "Mujer embarazada":
+                MujerEmbarazada.insert(info);
+                break;
+            case "Cliente corporativo":
+                Corporativo.insert(info);
+                break;
+            case "Cliente regular": 
+                Regular.insert(info);
+                break;
+        }
+        
+        
     }
     
+    @Override
     public Cliente Atender(){
         
         if(contador==0){
             return null;
         }
-        
         contador--;
         if(Discacidad.getContador()!=0){
             return Discacidad.Eliminar();
         }
-        else if(AdultoMayor.getContador()!=0){
+        if(AdultoMayor.getContador()!=0){
             return AdultoMayor.Eliminar(); 
         }
-        else if(MujerEmbarazada.getContador()!=0){
+        if(MujerEmbarazada.getContador()!=0){
             return MujerEmbarazada.Eliminar(); 
         }
-        else if(Corporativo.getContador()!=0){
+        if(Corporativo.getContador()!=0){
             return Corporativo.Eliminar(); 
         }
-        else if(Regular.getContador()!=0){
+        if(Regular.getContador()!=0){
             return Regular.Eliminar(); 
         }
         
         return null;
         
     }
+    
 }

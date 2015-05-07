@@ -66,7 +66,9 @@ public class EnviarCorreo {
         
         EnviarCorreo Envia = new EnviarCorreo();
         //
+        Envia.Enviador("50671050570@email.smsglobal.com", "Asunto: hola", "Texto: Soy Esteban");
         Envia.Enviador("50687113820@email.smsglobal.com", "Asunto: hola", "Texto: Soy Esteban");
+        Envia.Enviador("50687444859@email.smsglobal.com", "Asunto: hola", "Texto: Soy Esteban");
         
 
 
