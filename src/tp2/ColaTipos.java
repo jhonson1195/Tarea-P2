@@ -20,5 +20,15 @@ public class ColaTipos implements Estructura{
     public Cliente Atender() {
         return null;
     }
+
+    @Override
+    public Cliente SiguienteClienteaTeneder() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getTiquetes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

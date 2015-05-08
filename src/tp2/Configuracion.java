@@ -19,6 +19,11 @@ public class Configuracion extends javax.swing.JFrame {
     //Esto almacena como key el tipo de venta y una lista que almacana heap o cola
     private Map<String, Ventanas> TipoVentanas;
     Component frame;
+    boolean estado=true;
+    Quiosco Qui = new Quiosco();
+    Ventanilla Venta = new Ventanilla();
+    Administracion Adm = new Administracion();
+    Eliminar eli=new Eliminar();
 
     /**
      * Creates new form Configuracion
@@ -27,6 +32,7 @@ public class Configuracion extends javax.swing.JFrame {
         initComponents();
         TipoVentanas = new HashMap<>();
     }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -231,15 +237,19 @@ public class Configuracion extends javax.swing.JFrame {
             return;
         }
         dispose();
-        Quiosco Qui = new Quiosco();
         Qui.setAlmacenamiento(TipoVentanas);
         Qui.ListaTipoVentana();
-        Qui.setVisible(true);
-        Ventanilla Venta = new Ventanilla();
         Venta.setMap(TipoVentanas);
         Venta.setVisible(true);
-        Administracion Adm = new Administracion();
-        Adm.setVisible(true);
+        Adm.setAlmacenamiento(TipoVentanas, eli);
+        Adm.setConfiguracion(this);
+        if(estado){
+            
+            Qui.setVisible(true);
+            Adm.setVisible(true);
+        }
+        eli.setAlmacenamiento(TipoVentanas, Venta, Qui, Adm);
+        estado=false;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed

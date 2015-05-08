@@ -13,6 +13,7 @@ public class Ventanas {
     private String nombre, descripcion, codigo, TipoEstruc;
     private DoublyLinkedList<ventanillas> Lista;
     private Estructura almacenamiento;
+    private int CantidadCliente;
     
     public Ventanas(String nombre, String descripcion, String codigo, String estructura){
         Lista=new DoublyLinkedList<>();
@@ -25,6 +26,16 @@ public class Ventanas {
         this.descripcion=descripcion;
         this.codigo=codigo;
         this.TipoEstruc=estructura;
+        CantidadCliente=0;
+        
+    }
+    public void agregarEliminar(boolean bandera){
+        if(bandera){
+            Lista.remove(Lista.size()-1);
+        }else{
+            ventanillas ventana =new ventanillas("Ventana# "+Lista.size());
+            Lista.append(ventana);
+        }
         
     }
     
@@ -39,19 +50,35 @@ public class Ventanas {
     }
     public void appendCliente(Cliente cliente){
         almacenamiento.Agregar(cliente);
+        CantidadCliente++;
     }
     public String getCodigo(){
         return codigo;
+    }
+    public String getEstructura(){
+        return TipoEstruc;
+    }
+    public int getCantidadCliente(){
+        return CantidadCliente;
+    }
+    public Cliente getSiguienteCliente(){
+        return almacenamiento.SiguienteClienteaTeneder();
+    }
+    public String getTiquetes(){
+        return almacenamiento.getTiquetes();
     }
     
     public String PasarClienteVentanilla(){
         String mensaje=null;
         for(int i=0; i<Lista.size();i++){
             if(!Lista.get(i).getEstado()){
-                Cliente cliente=almacenamiento.Atender();
                 
+                Cliente cliente=almacenamiento.Atender();
+                mensaje="sin clientes";
+                if(cliente!=null){
                 Lista.get(i).setCliente(cliente);
-                mensaje="Atendiendo cliente "+cliente.getTiquete()+" en "+ Lista.get(i).getNombre();
+                mensaje="Atendiendo cliente "+cliente.getTiquete()+" en "+ Lista.get(i).getNombre();}
+                CantidadCliente--;
                 break;
             }
         }
