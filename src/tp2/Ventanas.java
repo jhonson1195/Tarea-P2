@@ -29,6 +29,15 @@ public class Ventanas {
         CantidadCliente=0;
         
     }
+    public void agregarEliminar(boolean bandera){
+        if(bandera){
+            Lista.remove(Lista.size()-1);
+        }else{
+            ventanillas ventana =new ventanillas("Ventana# "+Lista.size());
+            Lista.append(ventana);
+        }
+        
+    }
     
     public void append(ventanillas ventanilla){
         Lista.append(ventanilla);
