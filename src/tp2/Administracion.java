@@ -15,6 +15,8 @@ public class Administracion extends javax.swing.JFrame {
     private Map<String, Ventanas> TipoVentanas;
     Configuracion config;
     Eliminar eli;
+    Quiosco Qui;
+    Ventanilla venta;
 
     /**
      * Creates new form Administracion
@@ -22,9 +24,11 @@ public class Administracion extends javax.swing.JFrame {
     public Administracion() {
         initComponents();
     }
-    public void setAlmacenamiento(Map<String, Ventanas> TipoVentanas, Eliminar eli){
+    public void setAlmacenamiento(Map<String, Ventanas> TipoVentanas, Eliminar eli, Quiosco Qui, Ventanilla venta){
         this.TipoVentanas=TipoVentanas;
         this.eli=eli;
+        this.Qui=Qui;
+        this.venta=venta;
     }
     public void setConfiguracion(Configuracion config){
         this.config=config;
@@ -44,6 +48,7 @@ public class Administracion extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,6 +82,13 @@ public class Administracion extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setText("Estadísticas  del  sistema");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,7 +104,8 @@ public class Administracion extends javax.swing.JFrame {
                             .addComponent(jButton2)
                             .addComponent(jButton1)
                             .addComponent(jButton3)
-                            .addComponent(jButton4))))
+                            .addComponent(jButton4)
+                            .addComponent(jButton5))))
                 .addContainerGap(137, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -108,7 +121,9 @@ public class Administracion extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton4)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton5)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
@@ -145,6 +160,14 @@ public class Administracion extends javax.swing.JFrame {
         EA.cargar();
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        Estadisticas esta = new Estadisticas();
+        esta.setAlmacenamiento(TipoVentanas, this,Qui, venta);
+        esta.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,6 +209,7 @@ public class Administracion extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

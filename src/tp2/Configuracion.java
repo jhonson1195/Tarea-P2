@@ -241,7 +241,7 @@ public class Configuracion extends javax.swing.JFrame {
         Qui.ListaTipoVentana();
         Venta.setMap(TipoVentanas);
         Venta.setVisible(true);
-        Adm.setAlmacenamiento(TipoVentanas, eli);
+        Adm.setAlmacenamiento(TipoVentanas, eli, Qui,Venta);
         Adm.setConfiguracion(this);
         if(estado){
             

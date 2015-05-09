@@ -14,7 +14,10 @@ public class Ventanas {
     private DoublyLinkedList<ventanillas> Lista;
     private Estructura almacenamiento;
     private int CantidadCliente;
-    
+    private int CantidadTiquetes; 
+    private long SumaTiempo;
+    private int ClientesAtendidos;
+        
     public Ventanas(String nombre, String descripcion, String codigo, String estructura){
         Lista=new DoublyLinkedList<>();
         if("Heap".equals(estructura)){
@@ -27,6 +30,9 @@ public class Ventanas {
         this.codigo=codigo;
         this.TipoEstruc=estructura;
         CantidadCliente=0;
+        CantidadTiquetes=0;
+        SumaTiempo=0;
+        ClientesAtendidos=0;
         
     }
     public void agregarEliminar(boolean bandera){
@@ -37,6 +43,25 @@ public class Ventanas {
             Lista.append(ventana);
         }
         
+    }
+    
+    public String getSumaTiempo(){
+        String rs;
+        if(ClientesAtendidos==0){
+            return "0 segundos";
+        }
+        long re =SumaTiempo/ClientesAtendidos;
+        if(re<60){
+            return rs=re+" segundos";   
+        }else{
+            return rs=(re/60)+" minutos";
+        }
+    }
+    public void desocupar(int indice){
+        SumaTiempo+=getVentanilla(indice).desocupar();
+    }
+    public int getCantidadTiquetes(){
+        return CantidadTiquetes;
     }
     
     public void append(ventanillas ventanilla){
@@ -51,6 +76,7 @@ public class Ventanas {
     public void appendCliente(Cliente cliente){
         almacenamiento.Agregar(cliente);
         CantidadCliente++;
+        CantidadTiquetes++;
     }
     public String getCodigo(){
         return codigo;
@@ -79,10 +105,14 @@ public class Ventanas {
                 Lista.get(i).setCliente(cliente);
                 mensaje="Atendiendo cliente "+cliente.getTiquete()+" en "+ Lista.get(i).getNombre();}
                 CantidadCliente--;
+                ClientesAtendidos++;
                 break;
             }
         }
         return mensaje;
+    }
+    public int[] CantidadClientePortipos() {
+        return almacenamiento.CantidadClientePortipos();
     }
     
 }
