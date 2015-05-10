@@ -41,5 +41,4 @@ public class Cliente {
     public int getPrioridad(){
         return prioridad;
     }
-    
 }

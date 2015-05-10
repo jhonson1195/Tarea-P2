@@ -16,8 +16,8 @@ public class EnviarCorreo {
     final String puertoEnvio; 
     
     public EnviarCorreo(){
-        this.Cuenta = "pruebaprogramacion0405@gmail.com"; 
-        this.Contraseña = "tallertec"; 
+        this.Cuenta = "estructurasdatosjje@gmail.com"; 
+        this.Contraseña = "datosjje"; 
         this.servidorSMTP = "smtp.gmail.com"; 
         this.puertoEnvio = "465";
     }
@@ -67,8 +67,11 @@ public class EnviarCorreo {
         EnviarCorreo Envia = new EnviarCorreo();
         //
         //Envia.Enviador("50671050570@email.smsglobal.com", "Asunto: hola", "Texto: Soy Esteban");
-        Envia.Enviador("87113820@sms.ice.cr", "Asunto: hola", "Texto: Soy Esteban");
-        //Envia.Enviador("50687444859@email.smsglobal.com", "Asunto: hola", "Texto: Soy Esteban");
+        Envia.Enviador("50687113820@email.smsglobal.com", "Asunto: hola", "Texto: Soy Esteban");
+        //Envia.Enviador("87113820@sms.ice.cr", "Asunto: hola", "Texto: Soy Esteban");
+        Envia.Enviador("50687444859@email.smsglobal.com", "Asunto: hola", "Texto: Soy Esteban");
+        //Envia.Enviador("estebanmorales1594@hotmail.com", "Asunto: hola", "Texto: Soy Esteban");
+        
         
 
 

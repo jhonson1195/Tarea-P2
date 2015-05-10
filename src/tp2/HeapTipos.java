@@ -57,8 +57,6 @@ public class HeapTipos implements Estructura{
                 CantidadClientePortipos[4]++;
                 break;
         }
-        
-        
     }
     
     @Override
@@ -89,7 +87,7 @@ public class HeapTipos implements Estructura{
     }
 
     @Override
-    public Cliente SiguienteClienteaTeneder() {
+    public String SiguienteClienteaTeneder() {
         
         if(contador==0){
             return null;

@@ -77,8 +77,8 @@ public class MinHeap {
          return contador;
      }
      
-    public Cliente getPrimero(){
-        return lista.get(0);
+    public String getPrimero(){
+        return lista.get(0).getTiquete();
         
     }
     
