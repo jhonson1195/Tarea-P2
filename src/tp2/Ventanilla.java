@@ -25,6 +25,7 @@ public class Ventanilla extends javax.swing.JFrame {
      */
     public Ventanilla() {
         initComponents();
+        
     }
     
     public void setMap(Map<String, Ventanas> TipoVentanas){
@@ -35,8 +36,7 @@ public class Ventanilla extends javax.swing.JFrame {
         }
         jList1.setModel(modelojlist);
     }
-    
-    
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -301,8 +301,7 @@ public class Ventanilla extends javax.swing.JFrame {
         }
         String Elemento = (String) jList1.getSelectedValue();
         Ventanas TipoVentana=TipoVentanas.get(Elemento);
-        ventanillas ventana=TipoVentana.getVentanilla(jList2.getSelectedIndex());
-        ventana.desocupar();
+        TipoVentana.desocupar(jList2.getSelectedIndex());
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

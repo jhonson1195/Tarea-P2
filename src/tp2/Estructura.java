@@ -15,6 +15,7 @@ public interface Estructura {
     public Cliente Atender();
     public Cliente SiguienteClienteaTeneder();
     public String getTiquetes();
+    public int [] CantidadClientePortipos();
     
     
 }

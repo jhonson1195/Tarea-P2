@@ -16,16 +16,22 @@ import javax.swing.JOptionPane;
 public class Quiosco extends javax.swing.JFrame {
     private Map<String, Ventanas> TipoVentanas;
     int ContadorClientes;
+    int [] CantidadClientePortipos;
     /**
      * Creates new form Quiosco
      */
     public Quiosco() {
         initComponents();
         ContadorClientes=0;
+        CantidadClientePortipos=new int[5];
+        
     }
     
     public void setAlmacenamiento(Map<String, Ventanas> TipoVentanas){
         this.TipoVentanas=TipoVentanas;
+        for(int i=0;i>CantidadClientePortipos.length;i++){
+            CantidadClientePortipos[i]=0;
+        }
     }
     public void ListaTipoVentana(){
         jComboBox1.removeAllItems();
@@ -143,18 +149,23 @@ public class Quiosco extends javax.swing.JFrame {
         if(null != (String)seleccion2[0])switch ((String)seleccion2[0]) {
             case "Persona con discapacidad":
                 tiquete="D";
+                CantidadClientePortipos[0]++;
                 break;
             case "Adulto mayor":
                 tiquete="M";
+                CantidadClientePortipos[1]++;
                 break;
             case "Mujer embarazada":
                 tiquete="E";
+                CantidadClientePortipos[2]++;
                 break;
             case "Cliente corporativo":
                 tiquete="C";
+                CantidadClientePortipos[3]++;
                 break;
             case "Cliente regular": 
                 tiquete="R";
+                CantidadClientePortipos[4]++;
                 break;
         }
         tiquete = tipoventana.getCodigo()+"-"+tiquete+"-"+ContadorClientes;
@@ -167,6 +178,9 @@ public class Quiosco extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(frame,"Su tiquete es: "+tiquete);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public int [] CantidadClientePortipos(){
+        return CantidadClientePortipos;
+    }
     /**
      * @param args the command line arguments
      */

@@ -17,6 +17,7 @@ public class HeapTipos implements Estructura{
     MinHeap Corporativo;
     MinHeap Regular;
     int contador;
+    int [] CantidadClientePortipos;
     
     public HeapTipos(){
         Discacidad = new MinHeap();
@@ -25,7 +26,10 @@ public class HeapTipos implements Estructura{
         Corporativo = new MinHeap();
         Regular = new MinHeap();
         contador=0;
-        
+        CantidadClientePortipos = new int[5];
+        for(int i=0;i>CantidadClientePortipos.length;i++){
+            CantidadClientePortipos[i]=0;
+        }
     }
     
     @Override
@@ -34,18 +38,23 @@ public class HeapTipos implements Estructura{
         if(null != info.getTipo())switch (info.getTipo()) {
             case "Persona con discapacidad":
                 Discacidad.insert(info);
+                CantidadClientePortipos[0]++;
                 break;
             case "Adulto mayor":
                 AdultoMayor.insert(info);
+                CantidadClientePortipos[1]++;
                 break;
             case "Mujer embarazada":
                 MujerEmbarazada.insert(info);
+                CantidadClientePortipos[2]++;
                 break;
             case "Cliente corporativo":
                 Corporativo.insert(info);
+                CantidadClientePortipos[3]++;
                 break;
             case "Cliente regular": 
                 Regular.insert(info);
+                CantidadClientePortipos[4]++;
                 break;
         }
         
@@ -132,6 +141,10 @@ public class HeapTipos implements Estructura{
         
         
     }
-    
+
+    @Override
+    public int[] CantidadClientePortipos() {
+        return CantidadClientePortipos;
+    }
     
 }
