@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp2;
 /**
  *
- * @author jhonson
+ * Clase que va a crear las colas de cada tipo de cliente, 
+ * asi como el manejo de dichas colas como agregar, atender o obtener el siguiente
+ * 
  */
 public class ColaTipos implements Estructura{
-    
     SimpleQueue Discacidad;
     SimpleQueue AdultoMayor;
     SimpleQueue MujerEmbarazada;
@@ -18,6 +14,7 @@ public class ColaTipos implements Estructura{
     int contador;
     int [] CantidadClientePortipos;
     
+    //Constructor de las colas de cada tipo de cliente
     public ColaTipos(){
         Discacidad = new SimpleQueue();
         AdultoMayor = new SimpleQueue();
@@ -31,6 +28,7 @@ public class ColaTipos implements Estructura{
         }
     }
 
+    //Aqui se van a agregar clientes a las colas segun el tipo de cliente
     @Override
     public void Agregar(Cliente info) {
         contador++;
@@ -58,6 +56,7 @@ public class ColaTipos implements Estructura{
         }
     }
 
+    //Aqui se van a atender los clientes segun su prioridad
     @Override
     public Cliente Atender() {
             if(contador==0){
@@ -83,6 +82,7 @@ public class ColaTipos implements Estructura{
         return null;
     }
 
+    //Retorna cual es el siguiente cliente a atender
     @Override
     public Cliente SiguienteClienteaTeneder() {
         if(contador==0){
@@ -108,6 +108,7 @@ public class ColaTipos implements Estructura{
         return null;
     }
 
+    //Retorna la cola de todos los tiquetes en espera
     @Override
     public String getTiquetes() {
         if(contador==0){
@@ -133,6 +134,7 @@ public class ColaTipos implements Estructura{
         return "";
     }
 
+    //Retorna una lista que incluye la cantidad de clientes de cada tipo
     @Override
     public int[] CantidadClientePortipos() {
         return CantidadClientePortipos;    

@@ -1,6 +1,13 @@
 import java.util.Scanner;
 import tp2.Cliente;
 
+/*
+ *
+ * Esta clase se creo como prueba de las cola de prioridad,
+ * aqui unicamente se hacia el uso de una sola cola que iba a tener
+ * todos los tipos de clientes, ordenados segun su prioridad
+ *
+ */
 public class PriorityQueue{
     private Node front;
     private Node rear;
@@ -12,6 +19,7 @@ public class PriorityQueue{
         this.size = 0;
     }
     
+    //Aqui se ingresaban elementos a la cola, y a la vez la ordenaba segun correspondia
     void insert(Cliente element, Integer priority){
         Node nuevo=new Node<>(element, priority);
         if(this.size==0){
@@ -100,6 +108,7 @@ public class PriorityQueue{
         }
     }
     
+    //Aqui se liberaba o se sacaba el primer elemento de la cola
     public String liberar(){
         if(this.size == 0){
             System.out.print("Cola esta vacia");
@@ -115,6 +124,7 @@ public class PriorityQueue{
         return temp.getNombre();
     }
     
+    // Retorna el primer elemento de la cola
     public String primero(){
         if(this.size == 0){
             System.out.println("Cola esta vacia");
@@ -123,6 +133,7 @@ public class PriorityQueue{
         return this.front.getNext().getElement().getNombre();
     }
     
+    //Busca un elemento, segun el nombre o algun dato y retorna el indice del elemento
     int buscarElement(String element){
         Node temp=this.front.getNext();
         int count=0;
@@ -138,6 +149,7 @@ public class PriorityQueue{
         return count;
     }
     
+    //Busca un elemento segun el indice, retorna el nombre o algun dato
     String buscarEnPos(int pos){
         Node temp=this.front.getNext();
         int count=0;
@@ -153,20 +165,24 @@ public class PriorityQueue{
         return temp.getElement().getNombre();
     }
     
+    //Retorna el tamaño de la cola
     public int getSize(){
         return this.size;
     }
     
+    // Retorna si la cola esta vacia
     boolean estaVacia(){
         return this.size==0;
     }
     
+    //Limpia la cola
     public void vaciar(){
         this.front = new Node<>();
         this.rear = this.front;
         this.size = 0;
     }
     
+    // Retorna un String con informacion de los elementos de la cola
     public String toString(){
         if(this.size == 0){
             System.out.println("Cola esta vacia");

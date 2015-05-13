@@ -12,7 +12,11 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author jhonson
+ * INTERFAZ GRAFICA
+ * En esta ventana se puede visualizar el movimiento en cajas del banco,
+ * cuales son los tipos de ventanillas, cuantas cajas hay dispoblies, 
+ * cuantas estan ocupadas y todo lo que respecta al movimiento
+ * 
  */
 public class Ventanilla extends javax.swing.JFrame {
     DefaultListModel modelojlist = new DefaultListModel();
@@ -28,6 +32,7 @@ public class Ventanilla extends javax.swing.JFrame {
         
     }
     
+    //Ingresa los datos de los tipos de ventanillas
     public void setMap(Map<String, Ventanas> TipoVentanas){
         modelojlist = new DefaultListModel();
         this.TipoVentanas=TipoVentanas;
@@ -225,8 +230,8 @@ public class Ventanilla extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Boton para atender a un cliente
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         String Elemento = (String) jList1.getSelectedValue();
         Ventanas TipoVentana=TipoVentanas.get(Elemento);
         String anuncio=TipoVentana.PasarClienteVentanilla();
@@ -243,8 +248,8 @@ public class Ventanilla extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //Boton para vizualizar los tipos de ventanillas que tenemos
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
         modelojlist2 = new DefaultListModel();
         if((String) jList1.getSelectedValue()==null){
             JOptionPane.showMessageDialog(frame,"Por favor seleccione un tipo de ventanilla");
@@ -259,8 +264,8 @@ public class Ventanilla extends javax.swing.JFrame {
         jList2.setModel(modelojlist2);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    //Boton para ver el estado de una caja
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
         if((String) jList1.getSelectedValue()==null){
             Component frame = null;
             JOptionPane.showMessageDialog(frame,"Por favor seleccione un tipo de ventanilla");
@@ -292,8 +297,8 @@ public class Ventanilla extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    //Boton para liberrar una caja
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
         if((String) jList2.getSelectedValue()==null){
             Component frame = null;
             JOptionPane.showMessageDialog(frame,"Por favor seleccione una ventanilla");

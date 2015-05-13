@@ -1,15 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp2;
 
 import java.util.Map;
 
 /**
  *
- * @author jhonson
+ * INTERFAZ GRAFICA
+ * Esta ventana es para uso administrativo del banco,
+ * aqui se podemos:
+ * * Visualizar el estado de las colas
+ * * Agregar un tipo de ventanilla
+ * * Eliminar un tipo de ventanilla
+ * * Agregar o eliminar ventanillas
+ * * Visualizar las estadisticas del sistema
+ * 
  */
 public class Administracion extends javax.swing.JFrame {
     private Map<String, Ventanas> TipoVentanas;
@@ -18,18 +21,19 @@ public class Administracion extends javax.swing.JFrame {
     Quiosco Qui;
     Ventanilla venta;
 
-    /**
-     * Creates new form Administracion
-     */
     public Administracion() {
         initComponents();
     }
+    
+    //Ingresa los datos de almacenamiento de las colas
     public void setAlmacenamiento(Map<String, Ventanas> TipoVentanas, Eliminar eli, Quiosco Qui, Ventanilla venta){
         this.TipoVentanas=TipoVentanas;
         this.eli=eli;
         this.Qui=Qui;
         this.venta=venta;
     }
+    
+    //Ingresa la configuracion de las ventanillas
     public void setConfiguracion(Configuracion config){
         this.config=config;
     }
@@ -43,7 +47,7 @@ public class Administracion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        TituloAdm = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -52,7 +56,7 @@ public class Administracion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Administracion");
+        TituloAdm.setText("Administracion");
 
         jButton1.setText("Ver  estado  de  colas");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -61,21 +65,21 @@ public class Administracion extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Agregar ventanillas");
+        jButton2.setText("Agregar tipo de ventanilla");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("eliminar  tipo  de  ventanilla");
+        jButton3.setText("Eliminar  tipo  de  ventanilla");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Eliminar o  agregar ventanilla");
+        jButton4.setText("Eliminar o  Agregar ventanillas");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -97,7 +101,7 @@ public class Administracion extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(161, 161, 161)
-                        .addComponent(jLabel1))
+                        .addComponent(TituloAdm))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,7 +116,7 @@ public class Administracion extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(TituloAdm)
                 .addGap(29, 29, 29)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -129,31 +133,30 @@ public class Administracion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Boton para visualizar el estado de las colas
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         EstadoColas estado=new EstadoColas();
         estado.setAlmacenamiento(TipoVentanas);
         estado.setInterfaz(this);
         estado.setVisible(true);
         dispose();
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //Boton para agregar un tipo de ventanillas con la clase "Configuracion"
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
         config.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    //Boton para eliminar un tipo de ventanillas con la clase "Eliminar"
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
         eli.setVisible(true);
         eli.cargar();
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    //Boton para Eliminar o Agregar una ventanilla con la clase "EliminarAgregar"
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
         ElminarAgregar EA = new ElminarAgregar();
         EA.setAlmacenamiento(TipoVentanas, this);
         EA.setVisible(true);
@@ -161,17 +164,14 @@ public class Administracion extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    //Boton para visualizar las estadisticas del sistema con la clase "EStadisticas"
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
         Estadisticas esta = new Estadisticas();
         esta.setAlmacenamiento(TipoVentanas, this,Qui, venta);
         esta.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -205,11 +205,11 @@ public class Administracion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel TituloAdm;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

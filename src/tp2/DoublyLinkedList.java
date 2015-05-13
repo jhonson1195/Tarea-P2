@@ -2,9 +2,9 @@ package tp2;
 
 
 /**
+ * 
  *Lista doblemente enlazada implementada con la interfaz LinearList generica
- * @author jhonson
- * @param <T>
+ * 
  */
 public class DoublyLinkedList <T>{
     //Definicon de atributos

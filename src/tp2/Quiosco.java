@@ -14,7 +14,10 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author jhonson
+ * INTERFAZ GRAFICA
+ * Esta ventana va a agregar los clientes a una cola o min heap, y se le va
+ * a entregar el tiquete de espara
+ * 
  */
 public class Quiosco extends javax.swing.JFrame {
     EnviarSMS Mensaje;
@@ -28,15 +31,17 @@ public class Quiosco extends javax.swing.JFrame {
         initComponents();
         ContadorClientes=0;
         CantidadClientePortipos=new int[5];
-        
     }
     
+    //Ingresa los datos de alamacenamiento de los tipos de ventanillas
     public void setAlmacenamiento(Map<String, Ventanas> TipoVentanas){
         this.TipoVentanas=TipoVentanas;
         for(int i=0;i>CantidadClientePortipos.length;i++){
             CantidadClientePortipos[i]=0;
         }
     }
+    
+    //Obtiene el tipo de ventana a la cual quiere agregar el cliente
     public void ListaTipoVentana(){
         jComboBox1.removeAllItems();
         for(Object i:TipoVentanas.keySet().toArray()){
@@ -155,6 +160,7 @@ public class Quiosco extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Boton para agregar al cliente, y imprimir en pantalla o por envio de SMS el tiquete
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Object []seleccion=jComboBox1.getSelectedObjects();
@@ -201,6 +207,7 @@ public class Quiosco extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(frame,"Su tiquete es: "+tiquete);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //Imprime la lista de cantidad de clientes por cada tipo
     public int [] CantidadClientePortipos(){
         return CantidadClientePortipos;
     }

@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp2;
 
 /**
  *
- * @author jhonson
+ * Clase para medir el tiempo de espera de un cliente
+ * 
  */
 public class MedirTiempo {
     
@@ -15,13 +11,13 @@ public class MedirTiempo {
   private long stopTime = 0;
   private boolean running = false;
 
-
+  //Se inicio a contar el tiempo
   public void start() {
     this.startTime = System.currentTimeMillis();
     this.running = true;
   }
 
-
+  //Se finaliza de contar el tiempo
   public void stop() {
     this.stopTime = System.currentTimeMillis();
     this.running = false;
@@ -39,5 +35,4 @@ public class MedirTiempo {
     
     return elapsed;
   }
-    
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp2;
 
 import java.awt.Component;
@@ -12,7 +7,9 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author jhonson
+ * INTERFAZ GRAFICA
+ * Aqui se van a Eliminar/Agregar las ventanas para atender clientes
+ * 
  */
 public class ElminarAgregar extends javax.swing.JFrame {
     private Map<String, Ventanas> TipoVentanas;
@@ -25,11 +22,13 @@ public class ElminarAgregar extends javax.swing.JFrame {
         initComponents();
     }
     
+    //Ingresa los datos de alamacenamiento de los tipos de ventanillas
     public void setAlmacenamiento(Map<String, Ventanas> TipoVentanas, Administracion Adm){
         this.TipoVentanas=TipoVentanas;
         this.Adm=Adm;
     }
     
+    //Va a cargar los nombres de los tipos de ventanillas con su respectiva informacion
     public void cargar(){
         DefaultListModel modelojlist = new DefaultListModel();
         for(Object i:TipoVentanas.keySet().toArray()){
@@ -120,6 +119,7 @@ public class ElminarAgregar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Boton para agregar ventanas para atender clientes
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if((String) jList1.getSelectedValue()==null){
@@ -135,6 +135,7 @@ public class ElminarAgregar extends javax.swing.JFrame {
         //dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //Boton para eliminar ventanas para atender clientes
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         if((String) jList1.getSelectedValue()==null){
@@ -147,6 +148,7 @@ public class ElminarAgregar extends javax.swing.JFrame {
         ventana.agregarEliminar(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    //Boton para cerrar la ventana
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         Adm.setVisible(true);

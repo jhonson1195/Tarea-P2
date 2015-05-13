@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp2;
 
 import java.awt.Component;
@@ -12,7 +7,11 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author jhonson
+ * INTERFAZ GRAFICA
+ * En esta ventana se van a mostrar todas las estadisticas correspondientes
+ * a los clientes, segun cada tipo de cliente, como el total de tiquetes 
+ * entregados, ai tambien como el total de clientes atendidos
+ * 
  */
 public class Estadisticas extends javax.swing.JFrame {
     DefaultListModel modelojlist = new DefaultListModel();
@@ -29,6 +28,8 @@ public class Estadisticas extends javax.swing.JFrame {
     public Estadisticas() {
         initComponents();
     }
+    
+    //Ingresa los datos de alamacenamiento de los tipos de ventanillas
     public void setAlmacenamiento(Map<String, Ventanas> TipoVentanas,Administracion Adm, Quiosco Qui, Ventanilla venta){
         this.TipoVentanas=TipoVentanas;
         this.Adm=Adm;
@@ -320,6 +321,7 @@ public class Estadisticas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Boton para cargar las estadisticas
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         modelojlist2 = new DefaultListModel();
@@ -344,12 +346,14 @@ public class Estadisticas extends javax.swing.JFrame {
                                      
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //Boton para cerrar la ventana
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         Adm.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    //Boton para cargar las estadisticas
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         if((String) jList1.getSelectedValue()==null){

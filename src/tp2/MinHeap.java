@@ -1,23 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp2;
 
 /**
  *
- * @author jhonson
+ * Clase que va a crear los min heaps
+ * Utliza una lista doblemente enlazada para crear la estructura
+ * 
  */
 public class MinHeap {
     private int contador;
     private DoublyLinkedList <Cliente> lista;
 
+    // Crea el min heap
     public MinHeap(){
         lista = new DoublyLinkedList <>();
         contador=0;
     }
     
+    //Aqui se van a insertar elementos(clientes) en el min heap
     public void insert(Cliente cliente){
             lista.append(cliente);
             int padre=((lista.size()-1)-1)/2;
@@ -37,7 +36,8 @@ public class MinHeap {
             }
             contador++;
     }
-           
+    
+    //Aqui se van a eliminar elementos(clientes) en el min heap       
      public Cliente Eliminar(){
          if(lista.isEmpty()){return null;}
          Cliente eliminado=lista.get(0);
@@ -73,15 +73,18 @@ public class MinHeap {
          
      }   
      
+     // Retorna la cantidad de elementos(Clientes) en un min heap
      public int getContador(){
          return contador;
      }
      
+     //Retorna el primer cliente del min heap
     public Cliente getPrimero(){
         return lista.get(0);
         
     }
     
+    //Retorna un String de informacion de todos los tiquetes
     public String imp(){
         if(lista.size()==0){
             return "";

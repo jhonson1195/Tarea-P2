@@ -12,7 +12,11 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author jhonson
+ * INTERFAZ GRAFICA
+ * Esta ventana va a mostrar la informacion correspondiente a 
+ * un tipo de ventanilla en especifico, como su tipo, la cantidad de clientes
+ * en espera y cual es el siguiente a atender
+ * 
  */
 public class EstadoColas extends javax.swing.JFrame {
     private Map<String, Ventanas> TipoVentanas;
@@ -26,6 +30,7 @@ public class EstadoColas extends javax.swing.JFrame {
         initComponents();
     }
     
+    //Ingresa los datos de alamacenamiento de los tipos de ventanillas
     public void setAlmacenamiento(Map<String, Ventanas> TipoVentanas){
         this.TipoVentanas=TipoVentanas;
         for(Object i:TipoVentanas.keySet().toArray()){
@@ -33,6 +38,8 @@ public class EstadoColas extends javax.swing.JFrame {
         }
         jList1.setModel(modelojlist);
     }
+    
+    //Ingresa la informacion de la clase "Administracion"
     public void setInterfaz(Administracion interfaz){
         this.interfaz=interfaz;
     }
@@ -176,6 +183,7 @@ public class EstadoColas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Boton para mostrar la informacion correspondiente al tipo de ventanilla
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if((String) jList1.getSelectedValue()==null){

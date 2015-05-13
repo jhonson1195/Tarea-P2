@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp2;
 
 import java.io.BufferedReader;
@@ -12,6 +7,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
+/*
+* 
+* Clase para enviar SMS, por medio de un WebRequest, en la pagina sms506.com
+*
+*/
 public class EnviarSMS {
     public EnviarSMS(String Numero, String Texto) throws MalformedURLException, IOException{
         URL yahoo = new URL("http://api.sms506.com/sms/3a4e304455894a83296ac69947dc04b9/t="+Numero+"&m="+Texto);

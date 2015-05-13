@@ -4,9 +4,10 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 /*
-Esta clase es la que enviar correos cada vez que se agreguen clientes
-o sea el turno de una persona.
-Se utiliza la libreria Mail
+*
+* Esta clase es la que enviar correos
+* Se utilizo como prueba para enviar SMS desde SMSglobal.com
+*
 */
 
 public class EnviarCorreo {

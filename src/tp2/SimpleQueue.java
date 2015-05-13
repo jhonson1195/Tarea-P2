@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp2;
 
 /**
  *
- * @author Esteban
+ * Clase que va a crear las colas
+ * 
  */
 public class SimpleQueue {
     private Node front;
@@ -20,12 +16,14 @@ public class SimpleQueue {
         this.size = 0;
     }
     
+    //Aqui se van a insertar elementos(clientes) en la cola
     public void enQueue(Cliente element){
         this.rear.setNext(new Node(element, null));
         this.rear = rear.getNext();
         this.size++;
     }
     
+    //Aqui se van a eliminar elementos(clientes) en la cola
     public Cliente deQueue(){
         if(this.size == 0){
             System.out.println("Cola esta vacia");
@@ -41,6 +39,7 @@ public class SimpleQueue {
         return temp;
     }
     
+    //Retorna el primer cliente de la cola
     public Cliente first(){
         if(this.size == 0){
             System.out.println("Cola esta vacia");
@@ -49,17 +48,19 @@ public class SimpleQueue {
        return this.front .getNext().getElement();
     }
     
+    // Retorna la cantidad de elementos(Clientes) en la cola
     public int getSize(){
         return this.size;
     }
     
+    // Limpia la cola
     public void clear(){
         this.front = new Node();
         this.rear = this.front;
         this.size = 0;
     }
     
-
+    //Retorna un String de informacion de todos los tiquetes
     public String toString(){
         if(this.size == 0){
             System.out.println("Cola esta vacia");

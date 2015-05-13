@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp2;
 
 import java.awt.Component;
@@ -13,7 +8,11 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author jhonson
+ * INTERFAZ GRAFICA
+ * Esta va a hacer la primera ventana de inicio
+ * En esta ventana se van a crear los tipos de ventanillas, 
+ * con su respectiva configuracion
+ * 
  */
 public class Configuracion extends javax.swing.JFrame {
     //Esto almacena como key el tipo de venta y una lista que almacana heap o cola
@@ -25,9 +24,6 @@ public class Configuracion extends javax.swing.JFrame {
     Administracion Adm = new Administracion();
     Eliminar eli=new Eliminar();
 
-    /**
-     * Creates new form Configuracion
-     */
     public Configuracion() {
         initComponents();
         TipoVentanas = new HashMap<>();
@@ -199,9 +195,8 @@ public class Configuracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    //Boton para agregar los tipos de ventanillas
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
         if("".equals(jTextField1.getText())|"".equals(jTextField2.getText()) | "".equals(jTextField3.getText())|"".equals(jTextField4.getText())){
             JOptionPane.showMessageDialog(frame,"Por favor ingrese los datos solicitados");
             return;
@@ -230,6 +225,7 @@ public class Configuracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
+    // Boton para iniciar las ventanillas, con las otras clases
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         if(TipoVentanas.isEmpty()){

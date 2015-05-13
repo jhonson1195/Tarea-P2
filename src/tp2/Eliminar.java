@@ -12,7 +12,9 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author jhonson
+ * INTERFAZ GRAFICA
+ * Ventana que va a eliminar algun tipo de ventanillas
+ * 
  */
 public class Eliminar extends javax.swing.JFrame {
     private Map<String, Ventanas> TipoVentanas;
@@ -27,6 +29,7 @@ public class Eliminar extends javax.swing.JFrame {
         initComponents();
     }
     
+    //Ingresa los datos de alamacenamiento de los tipos de ventanillas
     public void setAlmacenamiento(Map<String, Ventanas> TipoVentanas, Ventanilla venta, Quiosco qui, Administracion Adm){
         this.TipoVentanas=TipoVentanas;
         this.venta=venta;
@@ -90,6 +93,7 @@ public class Eliminar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Boton para eliminar el tipo de ventanillas
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if((String) jList1.getSelectedValue()==null){
@@ -105,6 +109,7 @@ public class Eliminar extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //Va a cargar los nombres de los tipos de ventanillas con su respectiva informacion
     public void cargar(){
         DefaultListModel modelojlist = new DefaultListModel();
         for(Object i:TipoVentanas.keySet().toArray()){
