@@ -6,7 +6,10 @@
 package tp2;
 
 import java.awt.Component;
+import java.io.IOException;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -188,7 +191,13 @@ public class Quiosco extends javax.swing.JFrame {
         jTextField1.setText(null);
         jTextField3.setText(null);
         Component frame = null;
-        //new EnviarSMS(jTextField4.getText(),"Su tiquete es: "+tiquete);
+        /*
+        try {
+            new EnviarSMS(jTextField4.getText(),"Su tiquete es: "+tiquete);
+        } catch (IOException ex) {
+            System.out.println("El mensaje SMS no se pudo enviar")
+            Logger.getLogger(Quiosco.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
         JOptionPane.showMessageDialog(frame,"Su tiquete es: "+tiquete);
     }//GEN-LAST:event_jButton1ActionPerformed
 

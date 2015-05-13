@@ -41,12 +41,12 @@ public class SimpleQueue {
         return temp;
     }
     
-    public String first(){
+    public Cliente first(){
         if(this.size == 0){
             System.out.println("Cola esta vacia");
             return null;
         }
-       return this.front .getNext().getElement().getTiquete();
+       return this.front .getNext().getElement();
     }
     
     public int getSize(){

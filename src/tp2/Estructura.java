@@ -13,7 +13,7 @@ public interface Estructura {
     
     public void Agregar(Cliente info);
     public Cliente Atender();
-    public String SiguienteClienteaTeneder();
+    public Cliente SiguienteClienteaTeneder();
     public String getTiquetes();
     public int [] CantidadClientePortipos();
     

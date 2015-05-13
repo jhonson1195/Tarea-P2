@@ -87,7 +87,7 @@ public class Ventanas {
     public int getCantidadCliente(){
         return CantidadCliente;
     }
-    public String getSiguienteCliente(){
+    public Cliente getSiguienteCliente(){
         return almacenamiento.SiguienteClienteaTeneder();
     }
     public String getTiquetes(){
