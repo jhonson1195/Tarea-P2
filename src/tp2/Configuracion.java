@@ -239,11 +239,11 @@ public class Configuracion extends javax.swing.JFrame {
         Venta.setVisible(true);
         Adm.setAlmacenamiento(TipoVentanas, eli, Qui,Venta);
         Adm.setConfiguracion(this);
-        if(estado){
+        
             
             Qui.setVisible(true);
             Adm.setVisible(true);
-        }
+        
         eli.setAlmacenamiento(TipoVentanas, Venta, Qui, Adm);
         estado=false;
     }//GEN-LAST:event_jButton2ActionPerformed
