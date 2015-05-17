@@ -215,43 +215,49 @@ public class Quiosco extends javax.swing.JFrame {
         Object []seleccion2=jComboBox2.getSelectedObjects();
        
         Ventanas tipoventana=TipoVentanas.get((String)seleccion[0]);
-        String tiquete=""; 
-        if(null != (String)seleccion2[0])switch ((String)seleccion2[0]) {
-            case "Persona con discapacidad":
-                tiquete="D";
-                CantidadClientePortipos[0]++;
-                break;
-            case "Adulto mayor":
-                tiquete="M";
-                CantidadClientePortipos[1]++;
-                break;
-            case "Mujer embarazada":
-                tiquete="E";
-                CantidadClientePortipos[2]++;
-                break;
-            case "Cliente corporativo":
-                tiquete="C";
-                CantidadClientePortipos[3]++;
-                break;
-            case "Cliente regular": 
-                tiquete="R";
-                CantidadClientePortipos[4]++;
-                break;
-        }
-        tiquete = tipoventana.getCodigo()+"-"+tiquete+"-"+ContadorClientes;
-        Cliente cliente = new Cliente(jTextField1.getText(),jTextField3.getText(), (String)seleccion2[0], (String)seleccion[0], tiquete ,ContadorClientes);
-        tipoventana.appendCliente(cliente);
-        ContadorClientes++;
-        jTextField1.setText(null);
-        jTextField3.setText(null);
+        String tiquete="";
         Component frame = null;
-        try {
-            new EnviarSMS(jTextField4.getText(),"Su tiquete es: "+tiquete);
-        } catch (IOException ex) {
-            System.out.println("El mensaje SMS no se pudo enviar");
-            Logger.getLogger(Quiosco.class.getName()).log(Level.SEVERE, null, ex);
+        if(jTextField1.getText().trim().length()==0){
+            JOptionPane.showMessageDialog(frame,"No se ha ingresado ningun nombre de Cliente");
         }
-        JOptionPane.showMessageDialog(frame,"Su tiquete es: "+tiquete);
+        else{
+            if(null != (String)seleccion2[0])switch ((String)seleccion2[0]) {
+                case "Persona con discapacidad":
+                    tiquete="D";
+                    CantidadClientePortipos[0]++;
+                    break;
+                case "Adulto mayor":
+                    tiquete="M";
+                    CantidadClientePortipos[1]++;
+                    break;
+                case "Mujer embarazada":
+                    tiquete="E";
+                    CantidadClientePortipos[2]++;
+                    break;
+                case "Cliente corporativo":
+                    tiquete="C";
+                    CantidadClientePortipos[3]++;
+                    break;
+                case "Cliente regular": 
+                    tiquete="R";
+                    CantidadClientePortipos[4]++;
+                    break;
+            }
+            tiquete = tipoventana.getCodigo()+"-"+tiquete+"-"+ContadorClientes;
+            Cliente cliente = new Cliente(jTextField1.getText(),jTextField3.getText(), (String)seleccion2[0], (String)seleccion[0], tiquete ,ContadorClientes);
+            tipoventana.appendCliente(cliente);
+            ContadorClientes++;
+            jTextField1.setText(null);
+            jTextField3.setText(null);
+            jTextField4.setText(null);
+            try {
+                new EnviarSMS(jTextField4.getText(),"Su tiquete es: "+tiquete);
+            } catch (IOException ex) {
+                System.out.println("El mensaje SMS no se pudo enviar");
+                Logger.getLogger(Quiosco.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            JOptionPane.showMessageDialog(frame,"Su tiquete es: "+tiquete);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     //Imprime la lista de cantidad de clientes por cada tipo

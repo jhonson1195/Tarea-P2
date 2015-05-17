@@ -66,7 +66,7 @@ public class SimpleQueue {
             System.out.println("Cola esta vacia");
             return "";
         }
-        String result = "**SimpleQueue**\n";
+        String result="";
         Node tempFront = this.front.getNext();
         while (tempFront != null){
             result += tempFront.getElement().getTiquete() + ",";
