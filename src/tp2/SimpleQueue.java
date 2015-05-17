@@ -69,7 +69,7 @@ public class SimpleQueue {
         String result = "**SimpleQueue**\n";
         Node tempFront = this.front.getNext();
         while (tempFront != null){
-            result += tempFront.getElement().getTiquete() + " ";
+            result += tempFront.getElement().getTiquete() + ",";
             tempFront = tempFront.getNext();
         }
         return result;

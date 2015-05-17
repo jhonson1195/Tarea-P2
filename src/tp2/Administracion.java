@@ -9,7 +9,6 @@ import java.util.Map;
 
 /**
  *
-<<<<<<< HEAD
  * INTERFAZ GRAFICA
  * Esta ventana es para uso administrativo del banco,
  * aqui se podemos:
@@ -19,9 +18,6 @@ import java.util.Map;
  * * Agregar o eliminar ventanillas
  * * Visualizar las estadisticas del sistema
  * 
-=======
- * @author jhonson
->>>>>>> origin/master
  */
 public class Administracion extends javax.swing.JFrame {
     private Map<String, Ventanas> TipoVentanas;
@@ -39,17 +35,16 @@ public class Administracion extends javax.swing.JFrame {
         setResizable(false);
         setTitle("Administración");
     }
-<<<<<<< HEAD
     
     //Ingresa los datos de almacenamiento de las colas
-=======
->>>>>>> origin/master
     public void setAlmacenamiento(Map<String, Ventanas> TipoVentanas, Eliminar eli, Quiosco Qui, Ventanilla venta){
         this.TipoVentanas=TipoVentanas;
         this.eli=eli;
         this.Qui=Qui;
         this.venta=venta;
     }
+    
+    //Ingresa la configuracion de las ventanillas
     public void setConfiguracion(Configuracion config){
         this.config=config;
     }
@@ -174,52 +169,30 @@ public class Administracion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
     //Boton para visualizar el estado de las colas
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-=======
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
->>>>>>> origin/master
         EstadoColas estado=new EstadoColas();
         estado.setAlmacenamiento(TipoVentanas);
         estado.setInterfaz(this);
         estado.setVisible(true);
         dispose();
-<<<<<<< HEAD
-=======
-        
->>>>>>> origin/master
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //Boton para agregar un tipo de ventanillas con la clase "Configuracion"
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-<<<<<<< HEAD
-=======
-        // TODO add your handling code here:
->>>>>>> origin/master
         config.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-<<<<<<< HEAD
     //Boton para eliminar un tipo de ventanillas con la clase "Eliminar"
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-=======
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
->>>>>>> origin/master
         eli.setVisible(true);
         eli.cargar();
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-<<<<<<< HEAD
     //Boton para Eliminar o Agregar una ventanilla con la clase "EliminarAgregar"
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-=======
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
->>>>>>> origin/master
         ElminarAgregar EA = new ElminarAgregar();
         EA.setAlmacenamiento(TipoVentanas, this);
         EA.setVisible(true);
@@ -227,13 +200,8 @@ public class Administracion extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
-<<<<<<< HEAD
     //Boton para visualizar las estadisticas del sistema con la clase "EStadisticas"
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-=======
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
->>>>>>> origin/master
         Estadisticas esta = new Estadisticas();
         esta.setAlmacenamiento(TipoVentanas, this,Qui, venta);
         esta.setVisible(true);
